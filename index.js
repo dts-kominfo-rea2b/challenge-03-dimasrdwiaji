@@ -21,10 +21,30 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+// Belajar anonymous function
+const listBelanjaan = function(aryObj) {
+  // Buat array kosong
+  let itemBelanja = [];
+
+  // Buat for loop untuk tiap barang belanjaan untuk di push ke array kosong
+  for (let i = 0; i < aryObj.length; i++) {
+    itemBelanja[i] = `- ${aryObj[i].nama} x ${aryObj[i].kuantitas}`;
+  }
+  return itemBelanja;
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+// Belajar pake arrow function
+const totalBelanjaan = (aryObj) => {
+  let hargaTotal = 0;
+
+  // Buat for loop untuk hitung total harga per item belanja dan ditotal
+  for (const element of aryObj) {
+    hargaTotal += element.harga * element.kuantitas;
+  }
+
+  return hargaTotal;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
